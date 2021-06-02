@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using asp.net_webapi_learning.Services.CharacterService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace asp.net_webapi_learning
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "asp.net_webapi_learning", Version = "v1" });
             });
+            services.AddScoped<ICharacterService, CharacterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
